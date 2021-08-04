@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<!-- author: Prof. Dr. Christian Pfitzner -->
+<!-- date:   2021-08-04                   -->
+<launch>
+    <!-- display the depth image of the astra camera -->
+    <node pkg="rqt_image_view" type="rqt_image_view" name="rqt_image_view_depth" args="/camera/depth/image"/>
+
+
+    <!-- display the color image of the astra camera -->
+    <node pkg="rqt_image_view" type="rqt_image_view" name="rqt_image_view_color" args="/camera/rgb/image_raw"/>
+
+</launch>

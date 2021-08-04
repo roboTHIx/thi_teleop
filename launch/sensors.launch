@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<!-- author: Prof. Dr. Christian Pfitzner -->
+<!-- date:   2021-08-04                   -->
+<launch>
+
+    <!-- launch the astra camera -->
+    <include file="$(find astra_camera)/launch/astrapro.launch" />
+
+
+    <!-- launch us array arround the robot -->
+
+
+    <!-- launch the lidar system-->   
+</launch>

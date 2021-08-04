@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<!-- author: Prof. Dr. Christian Pfitzner -->
+<!-- date:   2021-08-04                   -->
+<launch>
+    
+
+    <include file="$(find thi_teleop)/launch/sensors.launch" />
+    <include file="$(find thi_teleop)/launch/gui.launch" />
+</launch>
