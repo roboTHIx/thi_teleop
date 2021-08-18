@@ -1,0 +1,35 @@
+<launch>
+
+    
+
+    # roslaunch flatland_server server.launch
+    <include file="$(find flatland_server)/launch/server.launch"/>
+
+    # joy joy_node _dev:=/dev/input/js2 _autorepeat_rate:=10
+    <node pkg="joy" name="joy_node" type="joy_node">
+        <param name="dev" value="/dev/input/js2"/>
+        <param name="autorepeat_rate" value="10"/>
+    </node>
+
+    # joystick steering.py
+    <node pkg="joystick" name="steering" type="steering.py" output="screen"/>
+
+    # rosrun gmapping slam_gmapping scan:=scan _base_frame:=base
+    <node pkg="gmapping" name="gmapper" type="slam_gmapping" output="screen">
+        <param name="scan" value="scan"/>
+        <param name="base_frame" value="base"/>
+        #param name="map_frame" value="map"/>
+        #aram name="odom_frame" value="odom"/>
+    </node>
+
+    # rviz with configuration gmapping.rviz
+    <node pkg="rviz" name="rviz" type="rviz" required="true" args="-d /home/ros/catkin_ws/src/gmapping.rviz"/>
+
+</launch>
+
+
+
+
+
+
+
